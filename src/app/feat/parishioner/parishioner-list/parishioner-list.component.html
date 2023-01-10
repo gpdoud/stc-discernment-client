@@ -1,0 +1,44 @@
+<div class="component">
+    <header></header>
+    <app-menu></app-menu>
+    <div class="page-title">
+        <span class="fw-bold">{{ pageTitle }}</span>
+        <span> | <input [(ngModel)]="searchCriteria" class="search-criteria" placeholder="Search"></span>
+    </div>
+    <main>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th><a (click)="sortFn('id')" class="sort-header">Id</a></th>
+                    <th><a (click)="sortFn('firstname')" class="sort-header">First</a></th>
+                    <th><a (click)="sortFn('lastname')" class="sort-header">Last</a></th>
+                    <th><a (click)="sortFn('email')" class="sort-header">Email</a></th>
+                    <th><a (click)="sortFn('cellphone')" class="sort-header">Cell</a></th>
+                    <th><a (click)="sortFn('reviewed')" class="sort-header">Reviewed</a></th>
+                    <th><a (click)="sortFn('status')" class="sort-header">Status</a></th>
+                    <th><a (click)="sortFn('submittedBy')" class="sort-header">Submitted</a></th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of parishioners">
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.firstname }}</td>
+                    <td>{{ p.lastname }}</td>
+                    <td>{{ p.email }}</td>
+                    <td>{{ p.cellphone }}</td>
+                    <td>{{ p.reviewed }}</td>
+                    <td>{{ p.status }}</td>
+                    <td>{{ p.submittedBy }}</td>
+                    <td>
+                        <a routerLink="/parishioners/detail/{{p.id}}" class="action-link">Det</a>
+                        <span>
+                            | <a routerLink="/parishioners/change/{{p.id}}" class="action-link">Chg</a>                            
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer></footer>
+</div>
