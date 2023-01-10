@@ -12,7 +12,7 @@ export class ParishionerListComponent implements OnInit {
   pageTitle = "Parishioner List";
   parishioners: Parishioner[] = [];
 
-  sortColumn = "id";
+  sortColumn = "lastname";
   sortAsc = true;
   searchCriteria = "";
 

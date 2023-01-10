@@ -3,21 +3,17 @@ export class Parishioner {
     id: number = 0;
     firstname: string = '';
     lastname: string = '';
-    email: string | null = null;
-    cellphone: string | null = null;
-    homephone: string | null = null;
-    ministry: string | null = null;
+    email: string = '';
+    cellphone: string = ''
+    homephone: string = '';
+    ministry: string = '';
     year: number = (new Date).getFullYear();
     reviewed: boolean = false;
-    status: ParishionerStatus | null = null;
-    submittedBy: string | null = null;
+    status: string = '';
+    submittedBy: string = '';
 
     active: boolean = true;
-    created: string = '';
-    updated: string | null = null;
+    created!: string;
+    updated!: string;
 
 }
-
-export enum ParishionerStatus {
-    Yes, No, CallNextYear, CallThisYear
-};

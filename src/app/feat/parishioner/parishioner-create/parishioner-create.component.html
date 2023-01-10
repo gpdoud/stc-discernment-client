@@ -1,2 +1,83 @@
-<app-menu></app-menu>
-<p>parishioner-create works!</p>
+<div class="component">
+    <header></header>
+    <app-menu></app-menu>
+    <div class="page-title">
+        <span class="fw-bold">{{ pageTitle }}</span>
+        <span> | <a routerLink="/parishioners/list" class="action-link">Return to list ...</a></span>
+    </div>
+    <main class="form-single">
+        <table class="table table-sm" *ngIf="parishioner">
+            <tbody>
+                <tr>
+                    <td>Id:</td>
+                    <td><input [(ngModel)]="parishioner.id" disabled></td>
+                </tr>
+                <tr>
+                    <td>Firstname:</td>
+                    <td><input [(ngModel)]="parishioner.firstname" ></td>
+                </tr>
+                <tr>
+                    <td>Lastname:</td>
+                    <td><input [(ngModel)]="parishioner.lastname" ></td>
+                </tr>
+                <tr>
+                    <td>Ministry:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.ministry" >
+                            <option>Committee</option>
+                            <option>Education</option>
+                            <option>Finance</option>
+                            <option>Pastoral</option>
+                            <option>Parishioner</option>
+                            <option>Social Action</option>
+                            <option>Stewardship</option>
+                            <option>Faith Formation</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input [(ngModel)]="parishioner.email" ></td>
+                </tr>
+                <tr>
+                    <td>Cellphone:</td>
+                    <td><input [(ngModel)]="parishioner.cellphone" ></td>
+                </tr>
+                <tr>
+                    <td>Homephone:</td>
+                    <td><input [(ngModel)]="parishioner.homephone" ></td>
+                </tr>
+                <tr>
+                    <td>Year:</td>
+                    <td><input [(ngModel)]="parishioner.year" ></td>
+                </tr>
+                <tr>
+                    <td>Reviewed:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.reviewed" >
+                            <option value=true>Yes</option>
+                            <option value=false>No</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.status" >
+                            <option value="YES">Yes - Attend this year</option>
+                            <option value="NYR">No - Call next year</option>
+                            <option value="NO">No - Do not call</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Submitted By:</td>
+                    <td><input [(ngModel)]="parishioner.submittedBy" ></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="save()" class="btn btn-primary">Save</button>
+    </main>
+    <footer></footer>
+</div>

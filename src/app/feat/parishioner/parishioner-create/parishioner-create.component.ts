@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Parishioner } from '../parishioner.class';
+import { ParishionerService } from '../parishioner.service';
 
 @Component({
   selector: 'app-parishioner-create',
@@ -7,4 +10,24 @@ import { Component } from '@angular/core';
 })
 export class ParishionerCreateComponent {
 
+  pageTitle = "Parishioner Create";
+  parishioner: Parishioner = new Parishioner();
+
+  constructor(
+    private pshsvc: ParishionerService,
+    private router: Router
+  ) {}
+
+  save(): void {
+    console.debug("B4:", this.parishioner);
+    this.pshsvc.create(this.parishioner).subscribe({
+      next: (res) => {
+        console.log("Created successfully!");
+        this.router.navigateByUrl("/parishioners/list");
+      }
+    });
+  }
+
+  ngOnInit(): void {
+  }
 }

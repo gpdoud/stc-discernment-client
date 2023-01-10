@@ -6,14 +6,17 @@
         <span> | <input [(ngModel)]="searchCriteria" class="search-criteria" placeholder="Search"></span>
     </div>
     <main>
+        <a routerLink="/parishioners/create" class="action-link">Create New</a>
         <table class="table table-sm">
             <thead>
                 <tr>
                     <th><a (click)="sortFn('id')" class="sort-header">Id</a></th>
                     <th><a (click)="sortFn('firstname')" class="sort-header">First</a></th>
                     <th><a (click)="sortFn('lastname')" class="sort-header">Last</a></th>
+                    <th><a (click)="sortFn('ministry')" class="sort-header">Ministry</a></th>
                     <th><a (click)="sortFn('email')" class="sort-header">Email</a></th>
                     <th><a (click)="sortFn('cellphone')" class="sort-header">Cell</a></th>
+                    <th><a (click)="sortFn('homephone')" class="sort-header">Home</a></th>
                     <th><a (click)="sortFn('reviewed')" class="sort-header">Reviewed</a></th>
                     <th><a (click)="sortFn('status')" class="sort-header">Status</a></th>
                     <th><a (click)="sortFn('submittedBy')" class="sort-header">Submitted</a></th>
@@ -21,13 +24,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of parishioners">
+                <tr *ngFor="let p of parishioners | searchParishioner:searchCriteria | sort:sortColumn:sortAsc">
                     <td>{{ p.id }}</td>
                     <td>{{ p.firstname }}</td>
                     <td>{{ p.lastname }}</td>
+                    <td>{{ p.ministry }}</td>
                     <td>{{ p.email }}</td>
                     <td>{{ p.cellphone }}</td>
-                    <td>{{ p.reviewed }}</td>
+                    <td>{{ p.homephone }}</td>
+                    <td>{{ p.reviewed | bool }}</td>
                     <td>{{ p.status }}</td>
                     <td>{{ p.submittedBy }}</td>
                     <td>

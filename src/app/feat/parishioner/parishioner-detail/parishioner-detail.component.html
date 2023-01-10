@@ -1,2 +1,86 @@
-<app-menu></app-menu>
-<p>parishioner-detail works!</p>
+<div class="component">
+    <header></header>
+    <app-menu></app-menu>
+    <div class="page-title">
+        <span class="fw-bold">{{ pageTitle }}</span>
+        <span> | <a routerLink="/parishioners/list" class="action-link">Return to list ...</a></span>
+    </div>
+    <main class="form-single">
+        <table class="table table-sm" *ngIf="parishioner">
+            <tbody>
+                <tr>
+                    <td>Id:</td>
+                    <td><input [(ngModel)]="parishioner.id" disabled></td>
+                </tr>
+                <tr>
+                    <td>Firstname:</td>
+                    <td><input [(ngModel)]="parishioner.firstname" disabled></td>
+                </tr>
+                <tr>
+                    <td>Lastname:</td>
+                    <td><input [(ngModel)]="parishioner.lastname" disabled></td>
+                </tr>
+                <tr>
+                    <td>Ministry:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.ministry" disabled >
+                            <option>Committee</option>
+                            <option>Education</option>
+                            <option>Finance</option>
+                            <option>Pastoral</option>
+                            <option>Parishioner</option>
+                            <option>Social Action</option>
+                            <option>Stewardship</option>
+                            <option>Faith Formation</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input [(ngModel)]="parishioner.email" disabled></td>
+                </tr>
+                <tr>
+                    <td>Cellphone:</td>
+                    <td><input [(ngModel)]="parishioner.cellphone" disabled></td>
+                </tr>
+                <tr>
+                    <td>Homephone:</td>
+                    <td><input [(ngModel)]="parishioner.homephone" disabled></td>
+                </tr>
+                <tr>
+                    <td>Year:</td>
+                    <td><input [(ngModel)]="parishioner.year" disabled></td>
+                </tr>
+                <tr>
+                    <td>Reviewed:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.reviewed" disabled>
+                            <option value=true>Yes</option>
+                            <option value=false>No</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Status:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.status" disabled>
+                            <option value="YES">Yes - Attend this year</option>
+                            <option value="NYR">No - Call next year</option>
+                            <option value="NO">No - Do not call</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Submitted By:</td>
+                    <td><input [(ngModel)]="parishioner.submittedBy" disabled></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="remove()" class="btn btn-danger">Delete</button>
+        <span *ngIf="showVerifyRemove">
+            | <button (click)="verifyRemove()" class="btn btn-danger">Verify Delete</button>
+        </span>
+    </main>
+    <footer></footer>
+</div>

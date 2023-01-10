@@ -11,6 +11,7 @@ import { ParishionerCreateComponent } from './parishioner/parishioner-create/par
 import { ParishionerChangeComponent } from './parishioner/parishioner-change/parishioner-change.component';
 import { SortPipe } from './sort.pipe';
 import { SearchParishionerPipe } from './parishioner/search-parishioner.pipe';
+import { BoolPipe } from './bool.pipe';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { SearchParishionerPipe } from './parishioner/search-parishioner.pipe';
         ParishionerCreateComponent,
         ParishionerChangeComponent,
         SortPipe,
-        SearchParishionerPipe
+        SearchParishionerPipe,
+        BoolPipe
     ],
     exports: [
     ],

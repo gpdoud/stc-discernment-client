@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 input, select {
     border-radius: 7px;
+    border-width: 2px;
 }
 .component {
 
 }
 .page-title {
-
+    margin: 0 0 1em 0;
 }
 .action-link, .sort-header {
     color: #0d6efd;
@@ -16,4 +17,9 @@ input, select {
 }
 .search-criteria {
     border: 0;
+}
+.form-single {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid silver;
 }
