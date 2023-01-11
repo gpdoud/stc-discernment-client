@@ -52,6 +52,15 @@
                     <td><input [(ngModel)]="parishioner.year" ></td>
                 </tr>
                 <tr>
+                    <td>Caller?:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.isCaller" >
+                            <option [ngValue]=true>Yes</option>
+                            <option [ngValue]=false>No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td>Reviewed:</td>
                     <td>
                         <select [(ngModel)]="parishioner.reviewed" >

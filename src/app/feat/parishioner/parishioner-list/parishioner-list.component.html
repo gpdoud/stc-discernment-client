@@ -16,7 +16,8 @@
                     <th><a (click)="sortFn('email')" class="sort-header">Email</a></th>
                     <th><a (click)="sortFn('reviewed')" class="sort-header">Reviewed</a></th>
                     <th><a (click)="sortFn('status')" class="sort-header">Status</a></th>
-                    <th><a (click)="sortFn('callerName')" class="sort-header">Caller</a></th>
+                    <th><a (click)="sortFn('isCaller')" class="sort-header">Caller?</a></th>
+                    <th><a (click)="sortFn('callerName')" class="sort-header">Called By</a></th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -28,6 +29,7 @@
                     <td>{{ p.email }}</td>
                     <td>{{ p.reviewed | bool }}</td>
                     <td>{{ p.status }}</td>
+                    <td>{{ p.isCaller | bool }}</td>
                     <td>{{ p.callerName }}</td>
                     <td>
                         <a routerLink="/parishioners/detail/{{p.id}}" class="action-link">Det</a>

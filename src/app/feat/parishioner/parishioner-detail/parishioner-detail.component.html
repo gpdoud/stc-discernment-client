@@ -52,11 +52,20 @@
                     <td><input [(ngModel)]="parishioner.year" disabled></td>
                 </tr>
                 <tr>
+                    <td>Caller?:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.isCaller" disabled >
+                            <option [ngValue]=true>Yes</option>
+                            <option [ngValue]=false>No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td>Reviewed:</td>
                     <td>
                         <select [(ngModel)]="parishioner.reviewed" disabled>
-                            <option value=true>Yes</option>
-                            <option value=false>No</option>
+                            <option [ngValue]=true>Yes</option>
+                            <option [ngValue]=false>No</option>
                         </select>
 
                     </td>
