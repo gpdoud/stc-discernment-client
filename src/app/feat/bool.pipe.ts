@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class BoolPipe implements PipeTransform {
 
-  transform(bool: boolean): string {
-    return bool ? "Yes" : "No";
+  transform(bool: boolean, trueValue = "Y", falseValue = ""): string {
+    return bool ? trueValue : falseValue;
   }
 
 }
