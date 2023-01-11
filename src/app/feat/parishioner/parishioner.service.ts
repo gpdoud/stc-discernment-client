@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AppInitService } from 'src/app/app-init.service';
 import { Parishioner } from './parishioner.class';
 
 
@@ -9,7 +10,7 @@ import { Parishioner } from './parishioner.class';
 })
 export class ParishionerService {
   
-  url = "http://localhost:5000/api/parishioners";
+  get url() { return `${this.init.config.baseurl}/api/parishioners`; }
   
   parishionerStatuses = [
     { value: "", display: "Select" },
@@ -30,7 +31,8 @@ export class ParishionerService {
   ]
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private init: AppInitService
   ) { }
 
   callers(): Observable<Parishioner[]> {
