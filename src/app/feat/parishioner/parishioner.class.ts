@@ -12,6 +12,10 @@ export class Parishioner {
     status: string = '';
     submittedBy: string = '';
 
+    callerId: number = 0;
+    caller!: Parishioner;
+    callerName: string = '';
+
     active: boolean = true;
     created!: string;
     updated!: string;

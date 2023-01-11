@@ -29,9 +29,18 @@ export class ParishionerListComponent implements OnInit {
     private pshsvc: ParishionerService
   ) {}
 
+  addCallerName(parishioners: Parishioner[]): void {
+    for(let p of parishioners) {
+        p.callerName = (p.caller !== null) 
+          ? p.caller.firstname + ' ' + p.caller.lastname 
+          : '';
+    }
+  }
+
   ngOnInit(): void {
     this.pshsvc.list().subscribe({
       next: (res) => {
+        this.addCallerName(res);
         this.parishioners = res as Parishioner[];
         console.debug(res);
       },
