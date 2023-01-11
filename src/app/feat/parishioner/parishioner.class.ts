@@ -6,7 +6,7 @@ export class Parishioner {
     email: string = '';
     cellphone: string = ''
     homephone: string = '';
-    ministry: string = '';
+    ministry: string = 'Parishioner';
     year: number = (new Date).getFullYear();
     reviewed: boolean = false;
     status: string = '';

@@ -15,6 +15,7 @@ export class SearchParishionerPipe implements PipeTransform {
         p.id.toString().includes(search)
         || p.firstname.toUpperCase().includes(search)
         || p.lastname.toUpperCase().includes(search)
+        || (p.ministry !== null && p.ministry.toUpperCase().includes(search))
         || (p.email !== null && p.email.toUpperCase().includes(search))
         || (p.cellphone !== null && p.cellphone.toUpperCase().includes(search))
         || p.reviewed.toString().toUpperCase().includes(search)

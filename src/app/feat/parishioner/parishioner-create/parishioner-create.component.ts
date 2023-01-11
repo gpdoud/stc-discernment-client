@@ -13,7 +13,9 @@ export class ParishionerCreateComponent {
   pageTitle = "Parishioner Create";
   parishioner: Parishioner = new Parishioner();
   callers!: Parishioner[];
-
+  get statuses() { return this.pshsvc.parishionerStatuses; }
+  get ministries() { return this.pshsvc.ministries; }
+  
   constructor(
     private pshsvc: ParishionerService,
     private router: Router

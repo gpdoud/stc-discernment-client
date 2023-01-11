@@ -13,6 +13,8 @@ export class ParishionerDetailComponent implements OnInit {
   pageTitle = "Parishioner Detail";
   parishioner!: Parishioner;
   showVerifyRemove = false;
+  get statuses() { return this.pshsvc.parishionerStatuses; }
+  get ministries() { return this.pshsvc.ministries; }
 
   constructor(
     private pshsvc: ParishionerService,
@@ -26,7 +28,9 @@ export class ParishionerDetailComponent implements OnInit {
   verifyRemove(): void {
 
   }
-
+  change(): void {
+    this.router.navigateByUrl(`/parishioners/change/${this.parishioner.id}`)
+  }
   ngOnInit(): void {
     let id = this.route.snapshot.params["id"];
     this.pshsvc.get(id).subscribe({

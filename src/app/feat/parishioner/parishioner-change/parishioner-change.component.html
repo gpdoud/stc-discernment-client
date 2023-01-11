@@ -24,14 +24,7 @@
                     <td>Ministry:</td>
                     <td>
                         <select [(ngModel)]="parishioner.ministry" >
-                            <option>Committee</option>
-                            <option>Education</option>
-                            <option>Finance</option>
-                            <option>Pastoral</option>
-                            <option>Parishioner</option>
-                            <option>Social Action</option>
-                            <option>Stewardship</option>
-                            <option>Faith Formation</option>
+                            <option *ngFor="let m of ministries">{{ m }}</option>
                         </select>
                     </td>
                 </tr>
@@ -74,9 +67,7 @@
                     <td>Status:</td>
                     <td>
                         <select [(ngModel)]="parishioner.status" >
-                            <option value="YES">Yes - Attend this year</option>
-                            <option value="NYR">No - Call next year</option>
-                            <option value="NO">No - Do not call</option>
+                            <option *ngFor="let item of statuses" value="{{item.value}}">{{ item.display }}</option>
                         </select>
                     </td>
                 </tr>

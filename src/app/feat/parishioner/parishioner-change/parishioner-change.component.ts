@@ -13,6 +13,8 @@ export class ParishionerChangeComponent implements OnInit {
   pageTitle = "Parishioner Change";
   parishioner!: Parishioner;
   callers!: Parishioner[];
+  get statuses() { return this.pshsvc.parishionerStatuses; }
+  get ministries() { return this.pshsvc.ministries; }
 
   constructor(
     private pshsvc: ParishionerService,

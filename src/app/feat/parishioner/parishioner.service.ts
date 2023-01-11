@@ -3,16 +3,39 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Parishioner } from './parishioner.class';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ParishionerService {
-
+  
   url = "http://localhost:5000/api/parishioners";
+  
+  parishionerStatuses = [
+    { value: "", display: "Select" },
+    { value: "A", display: "A - Yes" },
+    { value: "B", display: "B - No, next year" },
+    { value: "X", display: "X - No" }
+  ]
+
+  ministries = [
+    "Committee",
+    "Education",
+    "Finance",
+    "Pastoral",
+    "Parishioner",
+    "Social Action",
+    "Stewardship",
+    "Faith Formation"
+  ]
 
   constructor(
     private http: HttpClient
   ) { }
+
+  callers(): Observable<Parishioner[]> {
+    return this.http.get(`${this.url}/callers`) as Observable<Parishioner[]>;
+  }
 
   list(): Observable<Parishioner[]> {
     return this.http.get(`${this.url}`) as Observable<Parishioner[]>;
@@ -33,4 +56,15 @@ export class ParishionerService {
   remove(id: number): Observable<any> {
     return this.http.delete(`${this.url}/${id}`) as Observable<any>;
   }
+
+  addCallerNames(parishioners: Parishioner[]): void {
+    for(let parishioner of parishioners) {
+      this.addCallerName(parishioner);
+    }
+  }
+  addCallerName(parishioner: Parishioner): void {
+    parishioner.callerName = (parishioner.caller !== null) 
+        ? parishioner.caller.firstname + ' ' + parishioner.caller.lastname 
+        : '';
+}
 }
