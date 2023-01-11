@@ -75,6 +75,10 @@
                     <td>Submitted By:</td>
                     <td><input [(ngModel)]="parishioner.submittedBy" disabled></td>
                 </tr>
+                <tr>
+                    <td>Caller:</td>
+                    <td><input [ngModel]="parishioner.callerName" disabled></td>
+                </tr>
             </tbody>
         </table>
         <button (click)="remove()" class="btn btn-danger">Delete</button>

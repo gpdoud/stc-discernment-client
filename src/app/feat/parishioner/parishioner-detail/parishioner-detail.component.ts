@@ -31,6 +31,7 @@ export class ParishionerDetailComponent implements OnInit {
     let id = this.route.snapshot.params["id"];
     this.pshsvc.get(id).subscribe({
       next: (res) => {
+        this.pshsvc.addCallerName(res);
         this.parishioner = res as Parishioner;
         console.debug(res);
       },

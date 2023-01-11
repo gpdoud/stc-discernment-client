@@ -75,6 +75,14 @@
                     <td>Submitted By:</td>
                     <td><input [(ngModel)]="parishioner.submittedBy" ></td>
                 </tr>
+                <tr>
+                    <td>Caller:</td>
+                    <td>
+                        <select [(ngModel)]="parishioner.callerId">
+                            <option *ngFor="let c of callers" value="{{ c.id }}">{{ c.firstname }} {{ c.lastname }}</option>
+                        </select>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <button (click)="save()" class="btn btn-primary">Save</button>

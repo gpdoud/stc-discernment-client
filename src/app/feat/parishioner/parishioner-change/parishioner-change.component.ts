@@ -12,6 +12,7 @@ export class ParishionerChangeComponent implements OnInit {
   
   pageTitle = "Parishioner Change";
   parishioner!: Parishioner;
+  callers!: Parishioner[];
 
   constructor(
     private pshsvc: ParishionerService,
@@ -30,6 +31,16 @@ export class ParishionerChangeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.pshsvc.callers().subscribe({
+      next: (res) => {
+        this.pshsvc.addCallerNames(res);
+        this.callers = res as Parishioner[];
+        console.debug(res);
+      },
+      error: (err) => { 
+        console.error(err) 
+      }
+    });
     let id = this.route.snapshot.params["id"];
     this.pshsvc.get(id).subscribe({
       next: (res) => {

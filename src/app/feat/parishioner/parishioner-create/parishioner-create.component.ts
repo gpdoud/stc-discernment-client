@@ -12,6 +12,7 @@ export class ParishionerCreateComponent {
 
   pageTitle = "Parishioner Create";
   parishioner: Parishioner = new Parishioner();
+  callers!: Parishioner[];
 
   constructor(
     private pshsvc: ParishionerService,
@@ -29,5 +30,15 @@ export class ParishionerCreateComponent {
   }
 
   ngOnInit(): void {
+    this.pshsvc.callers().subscribe({
+      next: (res) => {
+        this.pshsvc.addCallerNames(res);
+        this.callers = res as Parishioner[];
+        console.debug(res);
+      },
+      error: (err) => { 
+        console.error(err) 
+      }
+    });
   }
 }
