@@ -12,7 +12,7 @@ import { ParishionerDetailComponent } from './feat/parishioner/parishioner-detai
 import { ParishionerListComponent } from './feat/parishioner/parishioner-list/parishioner-list.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "", redirectTo: "/parishioners/list", pathMatch: "full" },
 
   { path: "parishioners/list", component: ParishionerListComponent },
   { path: "parishioners/create", component: ParishionerCreateComponent },
