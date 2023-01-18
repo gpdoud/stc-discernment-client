@@ -13,7 +13,7 @@ export class Parishioner {
     submittedBy: string = '';
 
     isCaller: boolean = false;
-    callerId: number = 0;
+    callerId?: number | null = null;
     caller!: Parishioner;
     callerName: string = '';
 
