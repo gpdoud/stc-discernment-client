@@ -26,7 +26,15 @@ export class ParishionerDetailComponent implements OnInit {
     this.showVerifyRemove = !this.showVerifyRemove;
   }
   verifyRemove(): void {
-
+    this.pshsvc.remove(this.parishioner.id).subscribe({
+      next: (res) => {
+        console.log("Parishioner Deleted!");
+        this.router.navigateByUrl("/parishioners/list");
+      },
+      error: (err) => { 
+        console.error(err) 
+      }
+    });
   }
   change(): void {
     this.router.navigateByUrl(`/parishioners/change/${this.parishioner.id}`)
