@@ -20,6 +20,7 @@ export class SearchParishionerPipe implements PipeTransform {
         || (p.cellphone !== null && p.cellphone.toUpperCase().includes(search))
         || p.reviewed.toString().toUpperCase().includes(search)
         || (p.status !== null && p.status.toString().toUpperCase().includes(search))
+        || p.submittedBy.toString().toUpperCase().includes(search)
       ) {
         selected.push(p);
       }
