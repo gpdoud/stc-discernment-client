@@ -10,6 +10,7 @@
         <table class="table table-sm">
             <thead>
                 <tr>
+                    <th>##</th>
                     <th><a (click)="sortFn('id')" class="sort-header">Id</a></th>
                     <th><a (click)="sortFn('lastname')" class="sort-header">Name</a></th>
                     <th><a (click)="sortFn('ministry')" class="sort-header">Ministry</a></th>
@@ -22,7 +23,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let p of parishioners | searchParishioner:searchCriteria | sort:sortColumn:sortAsc">
+                <tr *ngFor="let p of parishioners | searchParishioner:searchCriteria | sort:sortColumn:sortAsc; index as idx">
+                    <td>{{ idx }}</td>
                     <td>{{ p.id }}</td>
                     <td>{{ p.firstname }} {{ p.lastname }}</td>
                     <td>{{ p.ministry }}</td>
