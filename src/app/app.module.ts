@@ -21,7 +21,7 @@ export const startupServiceFactory = (appinit: AppInitService) => {
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
-    CoreModule, FeatModule, AppRoutingModule
+    AppRoutingModule, CoreModule, FeatModule
   ],
   providers: [
     AppInitService, {

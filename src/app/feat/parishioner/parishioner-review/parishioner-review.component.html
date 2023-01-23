@@ -1,0 +1,28 @@
+<div class="component">
+    <header></header>
+    <app-menu></app-menu>
+    <div class="page-title">
+        <span class="fw-bold">{{ pageTitle }}</span>
+    </div>
+    <main>
+        <table class="table table-sm table-borderless">
+            <thead>
+                <tr>
+                    <th>##</th>
+                    <th>Id</th>
+                    <th>Parishioner</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of parishioners | sort:sortColumn:sortAsc; index as i;">
+                    <td>{{ i }}</td>
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.firstname }} {{ p.lastname }}</td>
+                    <td><input type="checkbox" >Defer</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer></footer>
+</div>

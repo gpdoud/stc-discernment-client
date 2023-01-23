@@ -1,0 +1,15 @@
+main {
+    width: 500px;
+    margin: 25px;
+}
+td input {
+    width: 50px;
+}
+@media print {
+    .component {
+        margin: 25px;
+    }
+    app-menu {
+        display: none;
+    }
+}
