@@ -25,7 +25,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let p of parishioners | searchParishioner:searchCriteria | sort:sortColumn:sortAsc; index as idx">
-                    <td>{{ idx }}</td>
+                    <td>{{ idx + 1 }}</td>
                     <td>{{ p.id }}</td>
                     <td>{{ p.firstname }} {{ p.lastname }}</td>
                     <td>{{ p.ministry }}</td>
