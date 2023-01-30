@@ -35,8 +35,16 @@ export class ParishionerService {
     private init: AppInitService
   ) { }
 
+  assignCallers(): Observable<any> {
+    return this.http.put(`${this.url}/assigncallers`, null) as Observable<any>;
+  }
+
   callers(): Observable<Parishioner[]> {
     return this.http.get(`${this.url}/callers`) as Observable<Parishioner[]>;
+  }
+
+  candidates(): Observable<Parishioner[]> {
+    return this.http.get(`${this.url}/candidates`) as Observable<Parishioner[]>;
   }
 
   list(): Observable<Parishioner[]> {

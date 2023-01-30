@@ -29,7 +29,18 @@ export class ParishionerListComponent implements OnInit {
     private pshsvc: ParishionerService
   ) {}
 
-  ngOnInit(): void {
+  autoAssignCallers(): void {
+    this.pshsvc.assignCallers().subscribe({
+      next: (res) => {
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+
+  refresh(): void {
     this.pshsvc.list().subscribe({
       next: (res) => {
         this.pshsvc.addCallerNames(res);
@@ -40,6 +51,10 @@ export class ParishionerListComponent implements OnInit {
         console.error(err) 
       }
     });  
+  }
+
+  ngOnInit(): void {
+    this.refresh();
   }
 
 }

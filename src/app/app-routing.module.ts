@@ -10,6 +10,7 @@ import { ParishionerCreateComponent } from './feat/parishioner/parishioner-creat
 import { ParishionerDetailComponent } from './feat/parishioner/parishioner-detail/parishioner-detail.component';
 import { ParishionerListComponent } from './feat/parishioner/parishioner-list/parishioner-list.component';
 import { ParishionerReviewComponent } from './feat/parishioner/parishioner-review/parishioner-review.component';
+import { ParishionerCallerListComponent } from './feat/parishioner/parishioner-caller-list/parishioner-caller-list.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/parishioners/list", pathMatch: "full" },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: "parishioners/detail/:id", component: ParishionerDetailComponent },
   { path: "parishioners/change/:id", component: ParishionerChangeComponent },
   { path: "parishioners/review", component: ParishionerReviewComponent },
+  { path: "parishioners/assigncallers", component: ParishionerCallerListComponent },
   
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },

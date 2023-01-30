@@ -1,0 +1,5 @@
+@media print {
+    app-menu {
+        display: none;
+    }
+}

@@ -1,0 +1,62 @@
+<div class="component">
+    <header></header>
+    <app-menu></app-menu>
+    <div class="page-title">
+        <span class="fw-bold">{{ pageTitle }}</span>
+    </div>
+    <main>
+        <div>
+            <p class="fst-italic">
+                Committee caller instructions:
+            </p>
+            <p>
+                Committee members should call each parishioner assigned to tell them
+                that they have been recommended for discernment. You should try calling up to
+                three times so you can talk to them. If after the third call, you don't get
+                a call back, you should send them an email.
+            </p>
+            <p>
+                Before you talk to a parishioner, you should be familiar with the Frequently
+                Asked Questions (FAQ) and the Script. Once you explain the discernment process
+                and answer any questions, you should ask them directly if they would participate
+                in the process. The possible responses are:
+            </p>
+            <ul>
+                <li>Yes - I will attend BOTH sessions March 13 & 27</li>
+                <li>Next Year - I cannot attend BOTH sessions this year. Call me next year.</li>
+                <li>No - I do not want to participate in discernment.</li>
+            </ul>
+            <p>
+                Circle the appropriate response on the Committee Call list. Once you have
+                responses from all parishioners assigned, send an email to Deacon Greg Doud
+                (gdoud@stcolumban.org) containing the responses for each parishioner.
+            </p>
+        </div>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th colspan="6">{{ pageTitle }}</th>
+                </tr>
+                <tr>
+                    <th>##</th>
+                    <th>Committee Caller</th>
+                    <th>Parishioner</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of parishioners; index as idx">
+                    <td>{{ idx + 1 }}</td>
+                    <td>{{ p.caller.firstname }} {{ p.caller.lastname }}</td>
+                    <td>{{ p.firstname }} {{ p.lastname }}</td>
+                    <td>{{ p.cellphone }}</td>
+                    <td>{{ p.email }}</td>
+                    <td>( Yes | Next Year | No )</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer></footer>
+</div>

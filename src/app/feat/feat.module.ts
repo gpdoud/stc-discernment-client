@@ -9,6 +9,7 @@ import { ParishionerCreateComponent } from './parishioner/parishioner-create/par
 import { ParishionerDetailComponent } from './parishioner/parishioner-detail/parishioner-detail.component';
 import { ParishionerListComponent } from './parishioner/parishioner-list/parishioner-list.component';
 import { ParishionerReviewComponent } from './parishioner/parishioner-review/parishioner-review.component';
+import { ParishionerCallerListComponent } from './parishioner/parishioner-caller-list/parishioner-caller-list.component';
 import { SearchParishionerPipe } from './parishioner/search-parishioner.pipe';
 import { SortPipe } from './sort.pipe';
 
@@ -19,8 +20,9 @@ import { SortPipe } from './sort.pipe';
         ParishionerCreateComponent,
         ParishionerChangeComponent,
         ParishionerReviewComponent,
-        SortPipe,
+        ParishionerCallerListComponent,
         SearchParishionerPipe,
+        SortPipe,
         BoolPipe
     ],
     imports: [
