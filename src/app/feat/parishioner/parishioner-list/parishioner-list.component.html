@@ -15,7 +15,7 @@
                     <th><a (click)="sortFn('id')" class="sort-header">Id</a></th>
                     <th><a (click)="sortFn('lastname')" class="sort-header">Name</a></th>
                     <th><a (click)="sortFn('ministry')" class="sort-header">Ministry</a></th>
-                    <th><a (click)="sortFn('email')" class="sort-header">Email</a></th>
+                    <th><a (click)="sortFn('cellphone')" class="sort-header">Phone</a></th>
                     <th><a (click)="sortFn('reviewed')" class="sort-header">Rev</a></th>
                     <th><a (click)="sortFn('status')" class="sort-header">Status</a></th>
                     <th><a (click)="sortFn('isCaller')" class="sort-header">IsCaller?</a></th>
@@ -30,7 +30,7 @@
                     <td>{{ p.id }}</td>
                     <td>{{ p.firstname }} {{ p.lastname }}</td>
                     <td>{{ p.ministry }}</td>
-                    <td>{{ p.email }}</td>
+                    <td>{{ p.cellphone }}</td>
                     <td>{{ p.reviewed | bool }}</td>
                     <td>{{ p.status }}</td>
                     <td>{{ p.isCaller | bool }}</td>
