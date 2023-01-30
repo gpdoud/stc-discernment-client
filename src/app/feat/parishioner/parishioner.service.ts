@@ -43,6 +43,10 @@ export class ParishionerService {
     return this.http.get(`${this.url}/callers`) as Observable<Parishioner[]>;
   }
 
+  candidates(): Observable<Parishioner[]> {
+    return this.http.get(`${this.url}/candidates`) as Observable<Parishioner[]>;
+  }
+
   list(): Observable<Parishioner[]> {
     return this.http.get(`${this.url}`) as Observable<Parishioner[]>;
   }
