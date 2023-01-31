@@ -1,0 +1,33 @@
+<div class="component">
+    <header></header>
+    <app-menu></app-menu>
+    <div class="page-title">
+        <span class="fw-bold">{{ pageTitle }}</span>
+    </div>
+    <main>
+        <div>
+            <h2>Instructions for assigning callers to candidates:</h2>
+            <p>
+                This page will assign the committee members to the parishioner candidates that 
+                need to be called and asked if they will participate in the upcoming discernment.
+            </p>
+            <p>
+                Any parishioner candidates that have been assigned callers manually will be skipped
+                and the manually assigned committee caller will remain as it.
+            </p>
+            <p>
+                When the assignment of callers is complete, the parishioners list will display automatically.
+            </p>
+            <p>
+                When clicking the "Auto Assign Parishioners to Committee Callers", you'll be asked to 
+                verify your action before any changes are made.
+            </p>
+        </div>
+        <button (click)="toggleYesNoButtons()" class="btn btn-primary">Auto Assign Parishioners to Committee Callers</button>
+        <span *ngIf="showYesNo">
+            | Are you sure? <button (click)="yes()" class="btn btn-sm btn-success">Yes</button>
+            or <button (click)="no()" class="btn btn-sm btn-danger">No</button>
+        </span>
+    </main>
+    <footer></footer>
+</div>

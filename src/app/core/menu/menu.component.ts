@@ -12,7 +12,8 @@ export class MenuComponent implements OnInit {
     // new Menu("STC", "/home"),
     new Menu("List Parishioners", "/parishioners/list"),
     new Menu("Print Review List", "/parishioners/review"),
-    new Menu("Print Caller List", "/parishioners/assigncallers"),
+    new Menu("Assign Callers", "/parishioners/assigncallers"),
+    new Menu("Print Caller List", "/parishioners/callerlist"),
     // new Menu("About", "/about"),
     new Menu("Help", "/help")
   ];

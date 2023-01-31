@@ -10,6 +10,7 @@ import { ParishionerDetailComponent } from './parishioner/parishioner-detail/par
 import { ParishionerListComponent } from './parishioner/parishioner-list/parishioner-list.component';
 import { ParishionerReviewComponent } from './parishioner/parishioner-review/parishioner-review.component';
 import { ParishionerCallerListComponent } from './parishioner/parishioner-caller-list/parishioner-caller-list.component';
+import { ParishionerAutoAssignCallersComponent } from './parishioner/parishioner-auto-assign-callers/parishioner-auto-assign-callers.component';
 import { SearchParishionerPipe } from './parishioner/search-parishioner.pipe';
 import { SortPipe } from './sort.pipe';
 
@@ -23,7 +24,8 @@ import { SortPipe } from './sort.pipe';
         ParishionerCallerListComponent,
         SearchParishionerPipe,
         SortPipe,
-        BoolPipe
+        BoolPipe,
+        ParishionerAutoAssignCallersComponent
     ],
     imports: [
         FormsModule, CommonModule, RouterModule,
