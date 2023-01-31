@@ -13,6 +13,9 @@ import { ParishionerCallerListComponent } from './parishioner/parishioner-caller
 import { ParishionerAutoAssignCallersComponent } from './parishioner/parishioner-auto-assign-callers/parishioner-auto-assign-callers.component';
 import { SearchParishionerPipe } from './parishioner/search-parishioner.pipe';
 import { SortPipe } from './sort.pipe';
+import { ConfigurationListComponent } from './configuration/configuration-list/configuration-list.component';
+import { ConfigurationChangeComponent } from './configuration/configuration-change/configuration-change.component';
+import { ConfigurationCreateComponent } from './configuration/configuration-create/configuration-create.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +28,10 @@ import { SortPipe } from './sort.pipe';
         SearchParishionerPipe,
         SortPipe,
         BoolPipe,
-        ParishionerAutoAssignCallersComponent
+        ParishionerAutoAssignCallersComponent,
+        ConfigurationListComponent,
+        ConfigurationChangeComponent,
+        ConfigurationCreateComponent
     ],
     imports: [
         FormsModule, CommonModule, RouterModule,
