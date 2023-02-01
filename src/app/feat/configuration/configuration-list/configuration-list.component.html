@@ -2,7 +2,7 @@
     <header></header>
     <app-menu></app-menu>
     <div class="page-title">
-        <span class="fw-bold">{{ pageTitle }}</span>
+        <app-page-title [pageTitle]="pageTitle"></app-page-title>
     </div>
     <main>
         <a routerLink="/configurations/create" class="action-link">Create New</a>

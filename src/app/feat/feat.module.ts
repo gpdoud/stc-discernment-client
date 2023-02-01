@@ -16,6 +16,7 @@ import { SortPipe } from './sort.pipe';
 import { ConfigurationListComponent } from './configuration/configuration-list/configuration-list.component';
 import { ConfigurationChangeComponent } from './configuration/configuration-change/configuration-change.component';
 import { ConfigurationCreateComponent } from './configuration/configuration-create/configuration-create.component';
+import { PageTitleComponent } from './page-title/page-title.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,8 @@ import { ConfigurationCreateComponent } from './configuration/configuration-crea
         ParishionerAutoAssignCallersComponent,
         ConfigurationListComponent,
         ConfigurationChangeComponent,
-        ConfigurationCreateComponent
+        ConfigurationCreateComponent,
+        PageTitleComponent
     ],
     imports: [
         FormsModule, CommonModule, RouterModule,

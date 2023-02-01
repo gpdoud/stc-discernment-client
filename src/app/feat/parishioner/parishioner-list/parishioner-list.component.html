@@ -2,12 +2,11 @@
     <header></header>
     <app-menu></app-menu>
     <div class="page-title">
-        <span class="fw-bold">{{ pageTitle }}</span>
+        <app-page-title [pageTitle]="pageTitle"></app-page-title>
         <span> | <input [(ngModel)]="searchCriteria" class="search-criteria" placeholder="Search"></span>
     </div>
     <main>
-        <a routerLink="/parishioners/create" class="action-link">Create New</a> |
-        <a (click)="autoAssignCallers()" class="action-link">Auto Assign Callers</a>
+        <a routerLink="/parishioners/create" class="action-link">Create New</a>
         <table class="table table-sm">
             <thead>
                 <tr>

@@ -9,7 +9,7 @@ import { ParishionerService } from '../parishioner.service';
   styleUrls: ['./parishioner-auto-assign-callers.component.css']
 })
 export class ParishionerAutoAssignCallersComponent {
-  pageTitle = "Auto Assign Committee Callers to Parishioner Candidates";
+  pageTitle = "Committee Assigned Parishioners To Call";
   parishioners: Parishioner[] = [];
   showYesNo: boolean = false;
 

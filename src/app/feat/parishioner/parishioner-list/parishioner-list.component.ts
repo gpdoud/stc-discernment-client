@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfigurationService } from '../../configuration/configuration.service';
 import { Parishioner } from '../parishioner.class';
 import { ParishionerService } from '../parishioner.service';
 
@@ -26,7 +27,8 @@ export class ParishionerListComponent implements OnInit {
   }
 
   constructor(
-    private pshsvc: ParishionerService
+    private pshsvc: ParishionerService,
+    private cfgsvc: ConfigurationService
   ) {}
 
   autoAssignCallers(): void {

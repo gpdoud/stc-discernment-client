@@ -2,7 +2,7 @@
     <header></header>
     <app-menu></app-menu>
     <div class="page-title">
-        <span class="fw-bold">{{ pageTitle }}</span>
+        <app-page-title [pageTitle]="pageTitle"></app-page-title>
         <span> | <a routerLink="/parishioners/list" class="action-link">Return to list ...</a></span>
     </div>
     <main class="form-single">
