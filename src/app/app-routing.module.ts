@@ -13,8 +13,16 @@ import { ParishionerReviewComponent } from './feat/parishioner/parishioner-revie
 import { ParishionerCallerListComponent } from './feat/parishioner/parishioner-caller-list/parishioner-caller-list.component';
 import { ParishionerAutoAssignCallersComponent } from './feat/parishioner/parishioner-auto-assign-callers/parishioner-auto-assign-callers.component';
 
+import { ConfigurationListComponent } from './feat/configuration/configuration-list/configuration-list.component';
+import { ConfigurationChangeComponent } from './feat/configuration/configuration-change/configuration-change.component';
+import { ConfigurationCreateComponent } from './feat/configuration/configuration-create/configuration-create.component';
+
 const routes: Routes = [
   { path: "", redirectTo: "/parishioners/list", pathMatch: "full" },
+
+  { path: "configurations/list", component: ConfigurationListComponent},
+  { path: "configurations/create", component: ConfigurationCreateComponent},
+  { path: "configurations/change/:key", component: ConfigurationChangeComponent},
 
   { path: "parishioners/list", component: ParishionerListComponent},
   { path: "parishioners/create", component: ParishionerCreateComponent },

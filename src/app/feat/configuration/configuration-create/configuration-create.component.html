@@ -1,0 +1,53 @@
+<div class="component">
+    <header></header>
+    <app-menu></app-menu>
+    <div class="page-title">
+        <app-page-title [pageTitle]="pageTitle"></app-page-title>
+    </div>
+    <main>
+        <table class="table table-sm" *ngIf="configuration">
+            <tbody>
+
+                <tr>
+                    <th>Key:</th>
+                    <td><input [(ngModel)]="configuration.keyValue" type="text" size="50"> (Must be unique.)</td>
+                </tr>
+                <tr>
+                    <th>Value:</th>
+                    <td>
+                        <input [(ngModel)]="configuration.dataValue" type="text" size="80">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Note:</th>
+                    <td>
+                        <input [(ngModel)]="configuration.note" type="text" size="80">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>System?:</th>
+                    <td><input [(ngModel)]="configuration.system" type="checkbox" size="10"></td>
+                </tr>
+                <tr>
+                    <th>Active:</th>
+                    <td><input [(ngModel)]="configuration.active" type="checkbox" size="10"></td>
+                </tr>
+                <tr>
+                    <th>Created:</th>
+                    <td>{{configuration.created | date:'short'}}</td>
+                </tr>
+                <tr>
+                    <th>Updated:</th>
+                    <td>{{configuration.updated | date:'short'}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button (click)="save()" class="btn btn-primary">Save</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer></footer>
+</div>

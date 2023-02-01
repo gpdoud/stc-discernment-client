@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
     new Menu("Print Review List", "/parishioners/review"),
     new Menu("Assign Callers", "/parishioners/assigncallers"),
     new Menu("Print Caller List", "/parishioners/callerlist"),
+    new Menu("Configuration", "/configurations/list"),
     // new Menu("About", "/about"),
     new Menu("Help", "/help")
   ];

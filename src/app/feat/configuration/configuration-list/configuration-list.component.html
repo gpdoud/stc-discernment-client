@@ -1,0 +1,41 @@
+<div class="component">
+    <header></header>
+    <app-menu></app-menu>
+    <div class="page-title">
+        <app-page-title [pageTitle]="pageTitle"></app-page-title>
+    </div>
+    <main>
+        <a routerLink="/configurations/create" class="action-link">Create New</a>
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>##</th>
+                    <th>Key</th>
+                    <th>Data</th>
+                    <th>Note</th>
+                    <th>System?</th>
+                    <th>Active?</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of configurations; index as idx">
+                    <td>{{ idx + 1 }}</td>
+                    <td>{{ c.keyValue }}</td>
+                    <td>{{ c.dataValue }}</td>
+                    <td>{{ c.note }}</td>
+                    <td>{{ c.system | bool }}</td>
+                    <td>{{ c.active | bool }}</td>
+                    <td class="actions">
+                        <a routerLink="/configurations/change/{{c.keyValue}}" class="action-link">Edt</a> |
+                        <a (click)="deleteKey(c.keyValue)" class="action-link text-danger fw-bold">Del</a>
+                        <span *ngIf="displayVerify && keyToDelete === c.keyValue">
+                            Are you sure? <a (click)="verifyDelete()" class="action-link text-danger fw-bold">Yes</a>                            
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer></footer>
+</div>
